@@ -1,4 +1,4 @@
-# AWS's Serverless Bouncer: A Step by Step Guide to Implementing API Gateway Secured With Cognito
+# AWS's Serverless Bouncer: A Beginner's Step by Step Guide to Implementing API Gateway Secured With Cognito
 
 ***Disclaimer:*** *The aim of this short post is to explain the basic steps of securing a mock API using API Gateway with Cognito as the 'authorizer'. This is not a full guide to either of these AWS services and the benefits / drawbacks they can bring to your architecture. Further research and practice will be required. This only focuses on the security use case.*
 
@@ -12,7 +12,7 @@
 
 An easy way to think of API Gateway is as a bouncer - it allows or prevents entry to the API. We are integrating Cognito to be the brains behind this decision.
 
-It is more than possible to build your own security layer, but for the price and speed of development this is a very simple and relatively secure solution. For basic security concerns it is it is a great start and a layer that is often recommended. I would, however, recommend that you still have an authentication check and authorisation layer within each of your APIs.
+It is more than possible to build your own security layer, but for the price and speed of development this is a very simple and allows for a professionally hardened solution. This leverages the security functionality created by Amazon's top class engineers, but the level of security at the end of the day comes down to your configuration. For basic security concerns it is it is a great start and a layer that is often recommended. I would, however, recommend that you still have an authentication check and authorisation layer within each of your APIs.
 
 These services integrate with each other with ease, as AWS API Gateway provides built-in support for AWS Cognito OAuth2 scopes through its 'Authorizer' function  (we will look at this in more detail later). You simply need to set up a Cognito user pool to be referenced in the API Gateway.
 
@@ -239,7 +239,7 @@ i. Create a new stage and name it etc.
 
 e. Once deployed you have a URL to test against - click it and see a unauthorised message showing that the bouncer is not letting you in (probs telling you to come back in 20 mins and try again but we all know that never works)
 
-![api URL deploy](./images/api_Gateway_url.png)
+![api URL deploy](./images/api_gateway_url.png)
 
 ### 6. Return back to postman, and test it out
 
