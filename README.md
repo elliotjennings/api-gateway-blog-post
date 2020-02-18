@@ -94,7 +94,7 @@ ii. Description (can be blank)
 iii. Select ‘Regional’ as the endpoint type
 </ol>
 
-![create API](./images/create_api_gw.png)
+![create API](./images/create_API_gw.png)
 
 d. Click on the / resource
 
