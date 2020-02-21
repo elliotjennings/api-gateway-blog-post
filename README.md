@@ -194,12 +194,13 @@ vi. Click request token and you will be taken to a login page.
 <br>
 vii. If you have not got a user click sign up and proceed
 <br>
-viii. Go to your Cognito user pool and confirm the user, then repeat i-iv
+viii. Go to your Cognito user pool and confirm the user (back in the configuration of Cognito it is possible to set up confirmation / verifications through email or text using AWS Simple Messaging Service.)
 <br>
-ix. Login with the confirmed credentials
+ix. Repeat i-iv
 <br>
-x. This will return you the token name, access token, type of code (bearer), id token and expires in value
-
+x. Login with the confirmed credentials
+<br>
+xi. This will return you the token name, access token, type of code (bearer), id token and expires in value
 </ol>
 
 f. Copy the id token and return to your 'Authorizers' screen in API Gateway service in the AWS management console
@@ -270,3 +271,13 @@ You have now set up your first authorised route through API Gateway secured by C
     * This is a platform designed by AWS for devs, it removes the deployment and management aspects
     * This will assign you a URL to use as your API endpoint
 * Try out a completely serverless architecture and write the API with lambda functions
+
+## appendix
+
+Since writing this blog, AWS have announced a new flavour of Amazon API Gateway currently in Beta phase - HTTP APIs.
+
+They have said the reason behind the release is that AWS API Gateway 'includes everything ranging from simple HTTP proxies to full-blown API management with request transformation, authentication, and validation. API Gateway supports REST APIs and WebSocket APIs, but customers have told us they want more features, lower latency, and lower cost'.
+
+This is not a guide through this new release but it is something to note and have a look into. This is not a replacement for the original flavours but a lightweight alternative. The HTTP API is to be used only for API proxy functionality which is ideal for serverless applications. While REST would be aimed towards the building and managing RESTful APIs. This means that it is cheaper (up to 71%) and potentially easier to use but it does miss out on some features.
+
+AWS have put together a really clear comparison between the flavours REST APIs and HTTP APIs. [click here](https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-vs-rest.html) to have a look.
